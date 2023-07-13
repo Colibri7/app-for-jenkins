@@ -1,22 +1,40 @@
 pipeline {
     agent any
     stages {
-        stage('Agent 1') {
+        stage('1-Build') {
             agent {
                 label 'ks2'
             }
             steps {
-                sh "ifconfig"
+                echo 'Start of Stage Build'
+                echo 'Building...'
+                echo 'End if Stage Build'
             }
         }
-        stage('Agent 2') {
+        stage('2-Test') {
+            agent {
+                label 'ks2'
+            }
+               steps {
+                echo 'Start of Stage Test'
+                echo 'Testing...'
+                sh "ls -la"
+                echo 'End if Stage Test'
+            }
+        }
+		stage('3-Deploy') {
             agent {
                 label 'ks3'
             }
-            steps {
-               sh "ifconfig"
+               steps {
+                echo 'Start of Stage Deploy'
+                echo 'Deploying...'
+                sh """
+                echo "Sardro"
+                echo "Kenjaev"
+                """
+                echo 'End if Stage Deploy'
             }
         }
     }
-    // Остальная часть пайплайна
 }
