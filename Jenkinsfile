@@ -1,5 +1,5 @@
 pipeline {
-    agent {docker {image "python:latest"}}
+    agent ks3
 
     stages {
         stage('1-Build') {
