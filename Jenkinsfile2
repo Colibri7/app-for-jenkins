@@ -8,6 +8,7 @@ pipeline {
             steps {
                 echo 'Start of Stage Build'
                 echo 'Building...'
+		sh "ifconfig eth0"
                 echo 'End if Stage Build'
             }
         }
@@ -18,7 +19,7 @@ pipeline {
                steps {
                 echo 'Start of Stage Test'
                 echo 'Testing...'
-                sh "ls -la"
+                sh "ifconfig eth0"
                 echo 'End if Stage Test'
             }
         }
@@ -29,10 +30,7 @@ pipeline {
                steps {
                 echo 'Start of Stage Deploy'
                 echo 'Deploying...'
-                sh """
-                echo "Sardro"
-                echo "Kenjaev"
-                """
+		sh "ifconfig eth0"
                 echo 'End if Stage Deploy'
             }
         }
