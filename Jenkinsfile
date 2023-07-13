@@ -1,7 +1,7 @@
 pipeline {
    
     agent {
-        label 'ks2'
+        label 'ks2' || 'ks3'
     }
     stages {
         stage('1-Build') {
