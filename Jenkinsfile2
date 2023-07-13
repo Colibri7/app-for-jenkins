@@ -1,0 +1,21 @@
+pipeline {
+    stages {
+        stage('Agent 1') {
+            agent {
+                label 'ks2'
+            }
+            steps {
+                sh "ifconfig"
+            }
+        }
+        stage('Agent 2') {
+            agent {
+                label 'ks3'
+            }
+            steps {
+               sh "ifconfig"
+            }
+        }
+    }
+    // Остальная часть пайплайна
+}
