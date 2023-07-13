@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Start of Stage Build'
                 echo 'Building...'
+                sh "ifconfig"
                 echo 'End if Stage Build'
             }
         }
