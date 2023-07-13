@@ -1,10 +1,7 @@
 pipeline {
    
-  agent {
-        label 'ks2'
-        label 'ks3'
-    }
     stages {
+       node('ks2' || 'ks3') {
         stage('1-Build') {
             steps {
                 echo 'Start of Stage Build'
@@ -13,6 +10,7 @@ pipeline {
                 echo 'End if Stage Build'
             }
         }
+       }
         stage('2-Test') {
             steps {
                 echo 'Start of Stage Test'
