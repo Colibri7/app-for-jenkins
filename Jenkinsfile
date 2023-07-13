@@ -1,8 +1,8 @@
 pipeline {
    
-    agent {
+   agent {
         node {
-            label 'ks2' || 'ks3'
+            label 'ks2' || label 'ks3'
         }
     }
     stages {
