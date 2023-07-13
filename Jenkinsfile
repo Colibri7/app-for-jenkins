@@ -1,7 +1,7 @@
 pipeline {
    
     stages {
-       node('ks2' || 'ks3') {
+       node('ks2' or  'ks3') {
         stage('1-Build') {
             steps {
                 echo 'Start of Stage Build'
