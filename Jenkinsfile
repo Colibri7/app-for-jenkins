@@ -1,7 +1,13 @@
 pipeline {
-   
-    stages {
-       node('ks2' or  'ks3') {
+   agent {
+        node('ks2') {
+           echo "ifconfig"
+        }
+        node('ks3') {
+           echo "ifconfig"
+        }
+    } 
+    stages { 
         stage('1-Build') {
             steps {
                 echo 'Start of Stage Build'
@@ -10,7 +16,7 @@ pipeline {
                 echo 'End if Stage Build'
             }
         }
-       }
+   
         stage('2-Test') {
             steps {
                 echo 'Start of Stage Test'
