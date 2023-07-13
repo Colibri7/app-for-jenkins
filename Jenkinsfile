@@ -1,5 +1,5 @@
 pipeline {
-    agent ks3
+    agent any
 
     stages {
         stage('1-Build') {
