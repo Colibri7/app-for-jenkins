@@ -1,12 +1,5 @@
 pipeline {
-   agent {
-        node('ks2') {
-           echo "ifconfig"
-        }
-        node('ks3') {
-           echo "ifconfig"
-        }
-    } 
+   agent any
     stages { 
         stage('1-Build') {
             steps {
